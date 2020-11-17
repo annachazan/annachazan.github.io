@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Desafio Rocketsat</title>
+  </head>
+  <body>
+      <h1> Atividade 1 </h1>
+      <ul id ="lista"></ul>
+      <p id = "msg"></p>
+
+    </body>
+    <script>
+      var endereco = {
+        rua: "Rua dos Pinheiros ",
+        numero: 1293,
+        bairro: "centro",
+        cidade: "São Paulo",
+        uf: "SP",
+      };
+
+      var resultado = "O usuário mora em ";
+      resultado+= endereco.cidade; 
+    resultado +="/";
+    resultado+= endereco.uf;
+    resultado+=", no bairro ";
+    resultado+= endereco.bairro;
+    resultado +=", na  ";
+    resultado+= endereco.rua;
+    resultado +="com nº";
+    resultado+= endereco.numero
+     document.getElementById("msg").innerHTML = resultado;
+    
+     
+    </script>
+  
+</html>

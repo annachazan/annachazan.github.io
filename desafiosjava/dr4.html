@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Desafio Rocketsat</title>
+  </head>
+  <body>
+      <h1> Atividade 4</h1>
+      <ul id ="lista"></ul>
+      <p id = "msg"></p>
+      <form> 
+		<input type="text" id="entrada1"
+		placeholder="Tempo de estudo que você possui?">
+
+		
+
+
+		<button onclick=recebe()>Executar</button>
+	</form>
+
+    </body>
+    <script >
+		
+        function recebe()
+    {
+var n1 = document.getElementById("entrada1").value;
+n1 = parseInt(n1);
+
+var resultado = xp(n1);
+var n2=0; 
+if (n1<n2)
+{
+    alert ("valor inválido");
+}
+else alert ("Baseado no seu tempo de estudo você tem um grau de experiência considerado "+ resultado); 
+
+
+}
+
+function xp(n1)
+{
+    switch(n1){
+  case 0:
+    return "Iniciante";
+    break;
+  case 1:
+    return "Iniciante";
+    break;
+  case 2:
+    return "Intermediário";
+    break;
+  case 3:
+    return "Intermediário";
+    break;
+  case 4:
+    return "Avançado";
+    break;
+  case 5:
+    return "Avançado";
+    break;
+  case 6:
+    return "Avançado";
+    break;
+  default:
+    return "Jedi Master";
+    break;
+}
+
+
+
+
+
+    
+
+        
+
+}
+    </script>
+  
+</html>
