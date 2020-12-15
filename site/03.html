@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf8">
+
+<meta name="author" content="Anna Chazan">
+       <link rel="icon" href="./icones/hh.png"> <link href='https://fonts.googleapis.com/css?family=Allura' rel='stylesheet'>
+       <link rel="stylesheet" media="screen" href="./estilo.css">
+    <link rel="stylesheet" media="print" href="./estiloImpressora.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140118868-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-140118868-1');
+    </script>
+    <section id="pcw"><h2><mark><span class="especiall">
+ Simulação 3</span></mark></h2></section>
+</head>
+<body>
+<h1> Exercício 3 </h1>
+<p>Insira  quantidades  aleatórias  de  reagentes, e te diremos qual  o  reagente  limitante,  qual  a  quantidade  do  reagente limitante e qual a quantidade de produto formada.</p>
+<input id = "H2" placeholder= "MOL de H2">
+<input id = "O" placeholder= "MOL de Oxigênio">
+<button onclick="R();">Executar</button>
+<p id="resultado"></p>
+
+
+<script >
+   function R(){
+      var h2 = document.getElementById("H2").value;
+      h2= parseFloat(h2);
+
+      var oxi = document.getElementById("O").value;
+      oxi=parseFloat(oxi);
+
+      if(h2>oxi){
+         var l = "O oxigênio é o reagente limitante, possuindo apenas "+ oxi + " mol(s). Logo será formado " + oxi + "mol (s) de H20";
+      }else if (oxi>h2){
+         var l = "O H2 é o reagente limitante, possuindo apenas "+ h2 + " mol(s) Logo será formado " + h2 + "mol (s) de H20";
+      }else{
+         var l = "Não há reagente em excesso.Logo será formado " + oxi + "mol(s) de H20";
+      }
+
+
+
+      document.getElementById("resultado").innerHTML = l;
+   }
+</script>
+
+<h3> Voltar </h3>
+    <a href="./conjunto.html"><i class="material-icons" style="color:#5E610B;">chevron_right</i> </a>
+
+</body>
+</html>
+
+
+
+
