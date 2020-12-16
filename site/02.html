@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf8">
+<meta name="author" content="Anna Chazan">
+       <link rel="icon" href="./icones/hh.png"> <link href='https://fonts.googleapis.com/css?family=Allura' rel='stylesheet'>
+       <link rel="stylesheet" media="screen" href="./style.css">
+    <link rel="stylesheet" media="print" href="./estiloImpressora.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140118868-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-140118868-1');
+    </script>
+    <section id="pcw"><h2><mark><span class="especiall">
+ Simulação 2</span></mark></h2></section>
+</head>
+<body>
+<h1 class="centro"> Exercício 02 </h1>
+<h3> Insira a quantidade de mols de H2O que queira formar e te diremos quantas gramas de <u>O2 </u>será necessário:</h3>
+
+<br>
+<input id = "mol">
+<button onclick="t();">Executar</button>
+<p id="conta"></p>
+<h3> Insira o volume de H2O que queira formar e te diremos quantos mols de H2 será necessário:</h3>
+<br>
+<input id = "vol">
+<button onclick="m();">Executar</button>
+<p id="conta2"></p>
+
+<script >
+	function t(){
+	var rmol = document.getElementById("mol").value;
+	rmol= parseFloat(rmol);
+	var go = 8;
+	var r= rmol*go;
+	var resultado= "1 MOL de H2O -> 8 G de O2 <br>" + rmol + "MOL de H2O -> X G de O2 <br> <br>" + rmol + " * " + go + " = x G de O2 <br>" + "X G de O2 = " + r ; 
+	document.getElementById("conta").innerHTML = resultado;
+	}
+
+	function m(){
+	var rvol = document.getElementById("vol").value;
+	rvol=parseFloat(rvol);
+	var v = 22.4;
+	var r= rvol/22.4;
+	var resultado=  v + " L de de H2O -> 1 MOL de H2 <br>" + rvol + "L de H2O -> X MOL de H2 <br> <br>" + rvol + " =  x * " + v + "<br> x = " + r;
+	document.getElementById("conta2").innerHTML = resultado;
+	}
+</script>
+ <h3> Voltar </h3>
+    <a href="./conjunto.html"><i class="material-icons" style="color:#5E610B;">chevron_right</i> </a>
+
+</body>
+</html>
