@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" media="screen" href="./estilo.css">
+
+    <title>Desafio Rocketsat</title>
+  </head>
+  <body>
+      <h1> Atividade 3 </h1>
+      <ul id ="lista"></ul>
+      <p id = "msg"></p>
+
+    </body>
+    <script>
+    
+    function th(a) {
+  let teste = a.indexOf("Javascript");
+  return teste;
+}
+
+var x = ["Javascript", "React Js", "React Native"];
+if(th(x)>=0){
+  document.getElementById("msg").innerHTML = true;
+}else{
+  document.getElementById("msg").innerHTML = false;
+}
+
+     
+    </script>
+  
+</html>

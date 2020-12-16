@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" media="screen" href="./estilo.css">
+
+    <title>Desafio Rocketsat</title>
+  </head>
+  <body>
+      <h1> Atividade 2, números pares </h1>
+      <section id="pcw"><h2><mark><span class="especiall">
+ Atividade 2</span></mark></h2></section>
+  </head><body>
+      <ul id ="lista"></ul>
+      <p id = "msg"></p>
+      <form> 
+		<input type="text" id="entrada1"
+		placeholder="Entre com um valor">
+
+		<input type="text" id="entrada2"
+		placeholder="Valor superior ao anterior">
+
+
+		<button onclick=recebe()>Executar</button>
+	</form>
+
+    </body>
+    <script >
+		
+        function recebe()
+    {
+var n1 = document.getElementById("entrada1").value;
+
+
+var n2 = document.getElementById("entrada2").value;
+
+n1 = parseInt(n1);
+n2 = parseInt(n2);
+
+var resultado = npar(n1, n2);
+if (n2<n1)
+{
+    alert (resultado);
+}
+document.write("Os número pares existentes entre eles, incluindo os mesmos, são " + resultado);
+
+
+}
+
+function npar(operando1, operando2){
+
+    var i; 
+var pares= []; 
+if (operando2>operando1) 
+{ for (i=operando1; i<=operando2; i++)
+         if (i%2==0){
+             pares.push(i);
+         }
+         return pares; 
+        } 
+
+
+        else  return "O segundo número é menor que o primeiro, atente-se ao que está sendo pedido";
+
+}
+    </script>
+  
+</html>
