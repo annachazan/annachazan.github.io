@@ -23,7 +23,7 @@
 <h2></h2>
 
 <br>
-<div class="margem">
+
     <h3> Transformar de mol para massa</h3>
     <input 
         type="number" 
@@ -55,9 +55,9 @@
     var n1 = document.getElementById("entrada1").value;
     n1 = parseFloat(n1);
     var massa = 0.0;
-    var gramas_oxi = 16;
+    var gramas_oxi = 32;
     massa  =  n1 * gramas_oxi;
-    var resultado = "16g - 1 mol O <br> Xg" +  " - " + n1 + " mol O<br> <br> " + gramas_oxi + " X " + n1 + " = Xg x 1 mol O <br> <br> O resultado é: " + massa + " g de Oxigênio";
+    var resultado = "32g - 1 mol O2 <br> Xg" +  " - " + n1 + " mol O2<br> <br> " + gramas_oxi + " X " + n1 + " = Xg x 1 mol O2 <br> <br> O resultado é: " + massa + " g de Oxigênio";
     document.getElementById("txt1").innerHTML = resultado;
 }
 
@@ -65,9 +65,9 @@ function cgrama()
 {
     var n1 = document.getElementById("entrada2").value;
     n1 = parseFloat(n1);
-    var gramas_oxi = 16;
+    var gramas_oxi = 32;
     mol  =  n1/gramas_oxi;
-    var resultado = "16g de Oxigênio - 1 mol O <br> " + n1 + " g de Oxigênio -  x mol C<br> <br> " + n1 + " g de Oxigênio x 1 mol O " + " = x mol O x 16 g de Oxigênio <br> <br>" +  n1 + " / " + gramas_oxi +   "<br>O resultado é: " + mol + " mol de :Oxigênio";
+    var resultado = "32g de Oxigênio - 1 mol O2 <br> " + n1 + " g de O2 -  x mol C<br> <br> " + n1 + " g de O2 x 1 mol O " + " = x mol O2 x 32 g de Oxigênio <br> <br>" +  n1 + " / " + gramas_oxi +   "<br>O resultado é: " + mol + " mol de :O2;
     document.getElementById("txt2").innerHTML = resultado;
 }
 </script>
