@@ -1,0 +1,89 @@
+@charset utf-8;
+
+body{
+	font-family: 'Roboto', sans-serif;
+	color: #black;
+}
+button{
+  background-color: white;
+  color: #black;
+  border: 2px solid #5E610B; 
+  border-radius: 2px;
+}
+button:hover{
+  background-color: #5E610B;
+  color: white;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.especiall{
+			font-family: 'Castellar';font-size: 1,8em;
+		}
+mark{ background-color: white;
+			color: #5E610B;
+			display:block;
+			text-align:center;
+			font-family:"oblique", cursive, sans-serif;
+			font-style: "Franklin Gothic Demi";
+			font-size: 1.5em;
+			
+			
+			
+		}
+th, td {
+  text-align: left;
+  padding: 8px;
+  border-radius: 0px;
+}
+
+tr:nth-child(even){background-color: #black}
+
+th {
+  background-color: #5e610b;
+  color: white;
+}
+.botao{
+ 
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: white; 
+  color: #black; 
+  border: 2px solid #5E610B;
+  border-radius: 4px;
+
+}
+header {20%}, footer, section, nav, aside, article{ width: 100%}
+}
+ /* Tablets */
+@media only screen and (min-width: 600px) {
+	section {
+	  width: 50%;
+	}
+}
+ /* Computadores */
+@media only screen and (min-width: 768px) {
+   
+	header, footer, section, nav, aside, article
+	}
+}
+@media only print {
+    nav, aside, footer, section{
+	  display:none;
+	}
+.botao:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+h1{
+	text-align: center;
+	color: #004d00;
+}
