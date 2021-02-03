@@ -1,113 +1,109 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Cadastro de livros</title>
+	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="estiloo.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 	 <link rel="icon" href="./icones/hh.png"> <link href='https://fonts.googleapis.com/css?family=Allura' rel='stylesheet'>
-       
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
 	<script>
-		$(function(){ 
-			$("#add_acervo").click(function(){
-				let tituloLivro =$("#titulo").val();
-				let descricaoLivro =$("#descricao").val();
-				let generoLivro =$("#genero").val();
-				let autorLivro =$("#autor").val();
 
-
-				$("#acervo")
-					.append(
-						$("<tr>")
-							.append(
-								$("<td>")
-									.text(tituloLivro)
-								)
-							.append(
-								$("<td>")
-									.text(descricaoLivro)
-							)
-							.append(
-								$("<td>")
-									.text(generoLivro)
-							)
-							.append(
-								$("<td>")
-									.text(autorLivro)
-							)
-							.append(
-								$("<td>")
-									.append($("<img>").attr('src', 'lixo.png'))
-								)
-					);
+		$(function () {
+			var addacervo = new Array();
+			$("#botao").click(function () {
+				let tituloLivro = $("#titulo").val();
+				let descricaoDoLivro = $("#descricao").val();
+				let generoDoLivro = $("#genero").val();
+				let autorDoLivro = $("#autor").val();
+				$("#acervo").append($("<tr>").addClass("livro")
+					.append($("<td>").text(tituloLivro)).addClass("titulo")
+					.append($("<td>").text(descricaoDoLivro)).addClass("descricao")
+					.append($("<td>").text(generoDoLivro)).addClass("genero")
+					.append($("<td>").text(autorDoLivro)).addClass("autor")
+					.append($("<td>").append($("<img>").attr('src', 'lixo.png'))));
+				$("#titulo").val("");
+				$("#descricao").val("");
+				$("#genero").val("");
+				$("#autor").val("");
 			})
 
-			$("#acervo").on("click","img", function(){
-				alert("Apagar a linha toda");
+
+			$("input[name=salvar_bd]").click(function () {
+				$('.livro').each(function (idx, obj) {
+					let titulo = $(obj).children("td:nth-child(1)").text();
+					let descricao = $(obj).children("td:nth-child(2)").text();
+					let genero = $(obj).children("td:nth-child(3)").text();
+					let autor = $(obj).children("td:nth-child(4)").text();
+					var livro = {
+						"titulo": titulo, "descricao": descricao,
+						"genero": genero, "autor": autor
+					};
+					addacervo.push(livro);
+					$("input[name=acervo_post]").val(JSON.stringify(addacervo));
+					console.log(addacervo);
+				});
+
+			});
+		
+
+			$("#botao_apagar").click(function () {
+				$("#acervo").empty();
+			})
+			$("#acervo").on("click", "img", function () {
 				$(this).parents("#acervo tr").remove();
 			})
-		});
 
-		function sugerir(){
-			var nome= document.getElementById('autor').value;
-			var lista= document.getElementById('historico');
-			var adicionar= true;
+		})
 
-			var opt= document.createElement('option');
-
-			for(i=0; i<lista.options.length; i++){
-				if(nome==lista.options[i].value){
-					adicionar=false;
-				}
-			}
-			if(adicionar==true){
-				opt.value=nome;
-				lista.appendChild(opt);
-			}
-
-		}
 	</script>
 </head>
+
 <body>
 
-<fieldset>
-	<legend>Cadastro de livros</legend>
+	<fieldset>
+		<legend>Cadastro de livros</legend>
+		<input type="text" id="titulo" placeholder="Titulo"><br><br>
+		<textarea id="descricao" placeholder="Descrição"></textarea><br><br>
+		<select id="genero">
+			<option value="Romance">Romance</option>
+			<option value="Drama">Drama</option>
+			<option value="Terror">Terror</option>
+			<option value="Ficção">Ficção</option>
+			<option value="Técnico">Técnico</option>
+		</select>
+		<br><br>
+		<input type="text" id="autor" placeholder="Autor">
+		
+		<button id="botao">Cadastrar</button>
+	</fieldset>
 
-	<input type="text" id="titulo" placeholder="Título"><br><br>
-	<textarea id="descricao"  placeholder="Descrição"></textarea> <br><br>
-	<select id="genero">
-		<option value="Romance">Romance</option>
-		<option value="Drama">Drama</option>
-		<option value="Terror">Terror</option>
-		<option value="Ficção">Ficção</option>
-		<option value="Técnico">Técnico</option>
-	</select>
-
-	<br> <br>
-	<input type="search" id="autor"  placeholder="Autor" >	
-	<button id="add_acervo" onclick="sugerir()">Cadastrar</button>
-
-	
-
-
-	<br>
-	
-</fieldset>
-
-<section id="pcw"><h2><mark><span class="especiall">
+	<section id="pcw"><h2><mark><span class="especiall">
  Catálogo</span></mark></h2></section>
   </head><body>
 
 	<table id="acervo">
-		<tr><th>Título</th><th>Descrição</th><th>Gênero</th><th>Autor</th><th></th></tr>
+		<tr>
+			<th class="teste">Título</th><br>
+			<th class="teste">Descrição</th>
+			<th class="teste">Gênero</th>
+			<th class="teste">Autor</th>
+			<th></th>
+		</tr>
 	</table>
-
-
-	<form action="http://rafaelescalfoni.net/web/livros.php" 
-		method="post">
+	<br>
+	<button id="botao_apagar">Limpar a lista</button>
+	<br>
+	<br>
+	<form action="https://rafaelescalfoni.net/web/livros.php" method="post">
 		<input type="hidden" name="acervo_post">
-		<input type="submit" class="botao" value="Salvar no BD">
+		<input type="submit" value="Salvar no BD" name="salvar_bd">
 	</form>
-	 </body>
+</body>
+
 </html>
+
+
