@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Laboratório de jQuery 4</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="estiloo.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	 <link rel="icon" href="./icones/hh.png"> <link href='https://fonts.googleapis.com/css?family=Allura' rel='stylesheet'>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+	<script>
+
+function conta(y, palavra)
+{
+    return y.filter((v) => (v === palavra)).length; 
+}
+
+$(function(){
+  
+    $("#botao").click(function(){
+        let texto = $("#entrada").val();
+        const rx = /[0-9]/;
+        if(rx.test(texto) || texto == '')
+        {
+            alert("Digite um valor válido.");
+        }
+        else
+        {
+            let atexto = texto.split(" ").map(function(palavra)
+            { 
+                return palavra.toLocaleLowerCase().replace(/[.,]/g, '');
+            });
+            let ao = new Array;
+            let palavrasu = new Array;
+            let i = 0;
+            let x = 0;
+            for(palavra of atexto)
+            { 
+                if(palavrasu.indexOf(palavra) == -1)
+                {
+                    let o = (conta(atexto, palavra));
+                    palavrasu.push(palavra); // 
+                    ao[x] = o;
+                }
+                else
+                {
+                    x--;
+                }
+                i++;
+                x++;
+            }
+            let cont = 0;
+            let palavra_mais_ocorrido;
+            let aempate =new Array;
+            for(i=0;i<palavrasu.length;i++)
+            {
+                var maior = Math.max.apply(null,ao);      
+                if(ao[i]==maior)
+                {   
+                    cont++;
+                    palavra_mais_ocorrido = palavrasu[i];
+                    aempate[i] = palavrasu[i];
+                }
+            }
+            if(cont>1)
+            {
+                $("#resultado").text("Há " + aempate.length + " palavras com " + ao[0] + " ocorrência(s): " + aempate + ".");
+            }
+            else
+            {
+                $("#resultado").text("A palavra '" + palavra_mais_ocorrido + "' aparece " + maior + " vez(es), sendo a que possui mais aparições.");
+            }
+        }        
+    })
+
+    $("#limpar").click(function(){
+        $("#entrada").val("");
+        $("#resultado").text("");
+        $("#acervo td").remove();
+    })
+
+});
+
+	</script>
+</head>
+
+<body>
+    <section id="pcw"><h2><mark><span class="especiall">
+ Número 4</span></mark></h2></section>
+        
+                <div>
+                    <h2>Escreva um texto e veja a palavra que mais aparece nele:</h2><br>
+                    <input type="text" id="entrada" placeholder="Digite uma frase:"><br><br>
+                    <button id="botao">Enviar</button>
+                    
+                    <p id="resultado"></p>
+                    <br>
+                </div>
+            </div>
+            
+        </section>  
+        <h3> Voltar </h3>
+    <a href="./deverjava.html"><i class="material-icons" style="color:#5E610B;">chevron_right</i> Voltar para lista de exercícios</a>  
+</body>
+
+</html>

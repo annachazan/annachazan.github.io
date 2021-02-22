@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Laboratório de jQuery 2</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="estiloo.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	 <link rel="icon" href="./icones/hh.png"> <link href='https://fonts.googleapis.com/css?family=Allura' rel='stylesheet'>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+	<script>
+
+
+
+$(function(){
+
+    $("#botao").click(function(){
+        let frase = $("#entrada1").val();
+        let procurar = $("#entrada2").val();
+        let substituir = $("#entrada3").val();
+        const regex = /[0-9]/;
+        if(regex.test(frase) || regex.test(procurar) || regex.test(substituir) || frase == '')
+        {
+            alert("Digite um valor válido.");
+        }
+        else
+        {
+            frase = frase.toLocaleLowerCase();
+            procurar = procurar.toLocaleLowerCase();
+            substituir = substituir.toLocaleLowerCase();
+            let atexto = frase.split(' ');
+            for(i=0;i<atexto.length;i++)
+            {
+                if(atexto[i]==procurar)
+                {
+                    atexto[i] = substituir;
+                }
+            }
+            let frase_novo = atexto.join(' ');
+            $("#resultado").text(frase_novo);
+        }
+    })
+
+    $("#limpar").click(function(){
+        $("#entrada1").val("");
+        $("#entrada2").val("");
+        $("#entrada3").val("");
+        $("#resultado").text("");
+    })
+
+});
+
+
+	</script>
+</head>
+
+<body>
+    <section id="pcw"><h2><mark><span class="especiall">
+ Número 5</span></mark></h2></section>
+        
+ <h2>Escreva uma frase, escolha uma palavra para ser substituída e por qual:</h2><br>
+                    <input type="text" id="entrada1" placeholder="Frase"><br><br>
+                    <input type="text" id="entrada2" placeholder="Palavra substituída"><br><br>
+                    <input type="text" id="entrada3" placeholder="Substituta"><br><br>
+                    <button id="botao" class="btn">Executar</button>
+                    
+                    <p id="resultado"></p>
+                    <br>
+                    <h3> Voltar </h3>
+    <a href="./deverjava.html"><i class="material-icons" style="color:#5E610B;">chevron_right</i> Voltar para lista de exercícios</a>  
+</body>
+
+</html>

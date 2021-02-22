@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Laboratório de jQuery 2</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="estiloo.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	 <link rel="icon" href="./icones/hh.png"> <link href='https://fonts.googleapis.com/css?family=Allura' rel='stylesheet'>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+	<script>
+
+function conta(y, palavra)
+{
+    return y.filter((v) => (v === palavra)).length; 
+}
+
+$(function(){
+  
+    $("#botao").click(function(){
+        let frase = $("#entrada").val();
+        const r = /[0-9]/;
+        if(r.test(frase) || frase == '')
+        {
+            alert("Digite um valor válido.");
+        }
+        else
+        {
+            let array_frase = frase.split(" ").map(function(palavra)
+            { 
+                return palavra.toLocaleLowerCase().replace(/[.,]/g, '');
+            });
+            let arrayas = new Array;
+            let pu = new Array;
+            let i = 0;
+            let x = 0;
+            let oco;
+            for(palavra of array_frase)
+            { 
+                if(pu.indexOf(palavra) == -1)
+                {
+                    oco = (conta(array_frase, palavra));
+                    pu.push(palavra); 
+                    arrayas[x] = oco;
+                }
+                else
+                {
+                    x--;
+                }
+                i++;
+                x++;
+            }
+           
+            for(i=0;i<pu.length;i++)
+            {
+                let obj_tr = $("<tr>");
+                $("#acervo").append(obj_tr);
+                let obj_td = $("<td>");
+                let obj_td2 = $("<td>");
+                obj_td.text(pu[i]);
+                obj_td2.text(arrayas[i]);
+                obj_tr.append(obj_td);
+                obj_tr.append(obj_td2);                 
+            }
+        }        
+    })
+
+    $("#limpar").click(function(){
+        $("#entrada").val("");
+        $("#resultado").text("");
+        $("#acervo td").remove();
+    })
+
+});
+	</script>
+</head>
+
+<body>
+     <section id="pcw"><h2><mark><span class="especiall">
+ Número 3</span></mark></h2></section>
+        
+                <div><br><br>
+                    <h2>Digite uma frase e veja quantas vezes aparece cada palavra</h2><br>
+                    <input type="text" id="entrada" placeholder="Digite uma frase:"><br><br>
+                    <button id="botao">Enviar</button>
+                    
+                    <p id="resultado"></p>
+                    <br>
+                </div>
+            </div>
+            <br>
+                <div class="col-md-6 col-sm-6" style="padding: 1% 0 0 10%;" align="center">
+                    <table width="60%" border="1" id="acervo">
+                        <tr>
+                            <th>Palavra</th>
+                            <th>Ocorrencias</th=>
+                        </tr>
+                    </table>
+                    <br>
+                </div>
+            </div>
+       
+        <h3> Voltar </h3>
+    <a href="./deverjava.html"><i class="material-icons" style="color:#5E610B;">chevron_right</i> Voltar para lista de exercícios</a>  
+</body>
+
+</html>

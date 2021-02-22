@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Laboratório de jQuery 2</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="estiloo.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	 <link rel="icon" href="./icones/hh.png"> <link href='https://fonts.googleapis.com/css?family=Allura' rel='stylesheet'>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+	<script>
+
+		$(function(){
+
+    $("#botao").click(function(){
+        let frase = $("#entrada").val();
+        const regex = /[0-9]/;
+        if(regex.test(frase) || frase == '')
+        {
+            alert("Digite um valor válido.");
+        }
+        else
+        {
+            frase = frase.split("").reverse().join("");
+            $("#resultado").text(frase);
+        }
+    })
+
+    $("#limpar").click(function(){
+        $("#entrada").val("");
+        $("#resultado").text("");
+    })
+
+});
+
+	</script>
+</head>
+
+<body>
+       <section id="pcw"><h2><mark><span class="especiall">
+ Número 1</span></mark></h2></section> 
+                <div><br>
+                    <h2>Escreva uma frase para vê-la invertida:</h2><br>
+                    <input type="text" id="entrada" placeholder="Digite uma frase:"><br><br>
+                    <button id="botao">Inverter</button>
+                    
+                    <p id="resultado"></p>
+                    <br>
+                </div>
+            </div>
+        </section> 
+       
+     <h3> Voltar </h3>
+    <a href="./deverjava.html"><i class="material-icons" style="color:#5E610B;">chevron_right</i> Voltar para lista de exercícios</a>
+   
+</body>
+
+</html>

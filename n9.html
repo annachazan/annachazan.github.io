@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Laboratório de jQuery 2</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="estiloo.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	 <link rel="icon" href="./icones/hh.png"> <link href='https://fonts.googleapis.com/css?family=Allura' rel='stylesheet'>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+	<script>
+       $(function(){
+    
+    $("#entrada").keyup(function(){
+        const rmin = /[a-z]/;
+        const rmai = /[A-Z]/;
+        const rnum = /[1-9]/;
+        const rchar_especiais = /[@#!$%&*()-+.,=]/;
+        if($("#entrada").val() == '')
+        {
+            $("#resultado").text("");
+        }
+        if(rmin.test($("#entrada").val()) || rmai.test($("#entrada").val()))
+        {
+            $("#resultado").text("Senha fraca");
+            $("#resultado").css("color", "red");
+            $("#resultado").css("font-weight" , "bolder");
+        }
+        if(rmin.test($("#entrada").val()) && rmai.test($("#entrada").val()) && rnum.test($("#entrada").val()))
+        {
+            $("#resultado").text("Senha moderada");
+            $("#resultado").css("color", "orange");
+            $("#resultado").css("font-weight" , "bolder");
+        }
+        if(rmin.test($("#entrada").val()) && rmai.test($("#entrada").val()) && rnum.test($("#entrada").val()) && rchar_especiais.test($("#entrada").val()))
+        {
+            $("#resultado").text("Senha forte");
+            $("#resultado").css("color", "green");
+            $("#resultado").css("font-weight" , "bolder");
+        }
+    })
+
+    $("#olho").on('click', function(){
+        let tipe = $("#entrada").attr("type");
+        console.log(tipe);
+        if(tipe == "password")
+        {
+            $("#entrada").prop('type',"text");
+            $(this).text("Ocultar");
+        }
+        else
+        {
+            $("#entrada").prop("type", "password");
+            $(this).text("Mostrar");
+        }
+    })
+});
+</script>
+<body>
+    <section id="pcw"><h2><mark><span class="especiall">
+ Número 9</span></mark></h2></section>
+     <h2>Digite uma senha e veja se ela é fraca, moderada ou forte:</h2><br>
+                    <input type="password" maxlength="8" id="entrada" placeholder="Digite uma senha:" style="width: 80%;">
+                    <button id="olho" class="">Mostrar</button>
+                    <br><br>
+                    <p id="resultado"></p>
+                   
+                    
+                    <h3> Voltar </h3>
+    <a href="./deverjava.html"><i class="material-icons" style="color:#5E610B;">chevron_right</i> Voltar para lista de exercícios</a>  
+</body>
+
+</html>

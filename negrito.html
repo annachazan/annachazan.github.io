@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Laboratório de jQuery 2</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="estiloo.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	 <link rel="icon" href="./icones/hh.png"> <link href='https://fonts.googleapis.com/css?family=Allura' rel='stylesheet'>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+	<script>
+
+$(function(){
+    function vogal(x)
+    {
+        x = x.toUpperCase();
+        if(x == 'A' || x == 'E' || x == 'I' || x == 'O' || x == 'U')
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+  
+    $("#botao").click(function(){
+        let y = $("#entrada").val();
+        let w = y.split("");
+        const regex = /[0-9]/;
+        let frase = "";
+        if(regex.test(y) || y == '')
+        {
+            alert("Digite um valor válido.");
+        }
+        else
+        {
+            for(i=0;i<y.length;i++)
+            {
+                if(vogal(w[i]))
+                {
+                    w[i] = "<strong>" + w[i] + "</strong>";
+                }
+            }
+            y = w.join("");
+            $("#resultado").html(y);
+        }
+    })
+
+    $("#limpar").click(function(){
+        $("#entrada").val("");
+        $("#resultado").text("");
+    })
+
+});
+
+	</script>
+</head>
+
+<body>
+        <section id="pcw"><h2><mark><span class="especiall">
+ Número 2</span></mark></h2></section>
+                <div>
+                    <h2>Escreva uma frase e a veja com suas vogais em negrito:</h2><br>
+                    <input type="text" id="entrada" placeholder="Digite uma frase:"><br><br>
+                    <button id="botao">Enviar</button>
+                    
+                    <p id="resultado"></p>
+                    <br>
+                </div>
+            </div>
+        </section>  
+        <h3> Voltar </h3>
+    <a href="./deverjava.html"><i class="material-icons" style="color:#5E610B;">chevron_right</i> Voltar para lista de exercícios</a> 
+</body>
+
+</html>

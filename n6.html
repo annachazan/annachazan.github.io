@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Laboratório de jQuery 2</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="estiloo.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	 <link rel="icon" href="./icones/hh.png"> <link href='https://fonts.googleapis.com/css?family=Allura' rel='stylesheet'>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+	<script>
+$(function(){
+
+    $("#botao").click(function(){
+        let data = $("#entrada").val();
+        if(data == '')  
+        {
+            alert("Digite uma data válida.");
+        }
+        else
+        {
+            let ano = data.substr(0,4);
+            let mes = data.substr(5,2);
+            let dia = data.substr(8,2);
+            let hoje = new Date;
+            let data1 = new Date(ano,mes - 1,dia);
+            const diff = Math.abs(data1.getTime() - hoje.getTime());
+            const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+            $("#resultado").text("Você tem " + days + " dias de vida!");        
+        }
+    })
+
+    $("#limpar").click(function(){
+        $("#entrada").val("");
+        $("#resultado").text("");
+    })
+
+});
+
+	</script>
+</head>
+
+<body>
+    <section id="pcw"><h2><mark><span class="especiall">
+ Número 6</span></mark></h2></section>
+        
+ <h2>Escreve sua data de nascimento e veja quntos dias de vida você já viveu:</h2><br>
+                    <input type="date" id="entrada" placeholder="Digite uma data:"><br><br>
+                    <button id="botao" class="btn">Executar</button>
+                    <button id="limpar" class="btn">Limpar</button>
+                    <a href="../paginas/2tri.html" class="btn">Voltar</a>
+                    <p id="resultado"></p>
+                    <br>
+                    <h3> Voltar </h3>
+    <a href="./deverjava.html"><i class="material-icons" style="color:#5E610B;">chevron_right</i> Voltar para lista de exercícios</a>  
+</body>
+
+</html>
