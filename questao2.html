@@ -1,0 +1,38 @@
+<DOCTYPE html>
+<html>
+<head><title>Ar atmosférico- questão02</title></head>
+<script >
+function certo() {
+	var a = document.querySelector("#resposta1").checked;
+	if(a)
+	{
+		document.write("CORRETO!! <br><br>  </div></div><div> <button class = 'b1'>Ver resolução</button><p class = 'b2' style = 'display: none;'>Para alcançar a resposta expressa pela alternativa d, devemos realizar os seguintes passos a partir dos dados fornecidos pelo exercício: <br><br> Volume: 44,8 L <br><br> Massa do CH4: 60 g <br><br> Massa do Ar: 32 g <br><br> Temperatura: 350 K <br><br> R: 0,082 atm.L.K.  <br><br> 1º Passo: Calcular a massa molar do CH4.  <br><br> Para isso, basta multiplicar a quantidade de átomos de CH4 por sua massa molar:  <br><br> MCH4 = 1.12 + 4.1  <br><br> MCH4 = 12 + 4  <br><br> MCH4 = 16 g/mol  <br><br> 2º Passo: Cálculo do número de mol de CH4.  <br><br> Para determiná-lo, devemos dividir a massa desse elemento por sua massa molar:  <br><br> nCH4 = mCH4/MCH4   <br><br> nCH4 = 60/16  <br><br> nCH4 = 3,75 mol  <br><br> 3º Passo: Cálculo do número de mol de O2.  <br><br> Para determiná-lo, devemos dividir a massa de O2 por sua massa molar:  <br><br> nAr = mAr/MAr  <br><br> nAr = 32/40  <br><br> nAr = 0,8 mol  <br><br> 4º Passo: Cálculo do número de mol total.  <br><br> Para determiná-lo, devemos somar o número de mol dos gases encontrado nos passos anteriores:  <br><br> nT= nCH4 + nAr  <br><br> nT= 3,75 + 0,8  <br><br> nT= 4,55  <br><br> 5º Passo: Determinar a pressão total da mistura. <br><br> PT.VT = nT.R.T  <br><br> PT.44,8 = 4,55. 0,082.350  <br><br> PT.44,8 = 130585  <br><br> PT = 130585/44,8  <br><br> PT= 2,91 atm (aproximadamente)  <br><br> 6º Passo: Determinar a pressão parcial do ar.  <br><br> A pressão parcial do N2 é determinada pela seguinte expressão:  <br><br> PAr/PT = nAr/nT   <br><br> PAr/2,91  = 0,8/4,55  <br><br> 4,55. PAr = 2,91.0,8  <br><br> 4,55. PN2 = 2,328  <br><br> PN2 = 2,328/4,55  <br><br> PAr = 0,51 atm (aproximadamente)</p></div>");
+	}
+	else  {
+		document.write("Estude mais! <br><br> </div></div><div> <button class = 'b1'>Ver resolução</button><p class = 'b2' style = 'display: none;'>Para alcançar a resposta expressa pela alternativa d, devemos realizar os seguintes passos a partir dos dados fornecidos pelo exercício: <br><br> Volume: 44,8 L <br><br> Massa do CH4: 60 g <br><br> Massa do Ar: 32 g <br><br> Temperatura: 350 K <br><br> R: 0,082 atm.L.K.  <br><br> 1º Passo: Calcular a massa molar do CH4.  <br><br> Para isso, basta multiplicar a quantidade de átomos de CH4 por sua massa molar:  <br><br> MCH4 = 1.12 + 4.1  <br><br> MCH4 = 12 + 4  <br><br> MCH4 = 16 g/mol  <br><br> 2º Passo: Cálculo do número de mol de CH4.  <br><br> Para determiná-lo, devemos dividir a massa desse elemento por sua massa molar:  <br><br> nCH4 = mCH4/MCH4   <br><br> nCH4 = 60/16  <br><br> nCH4 = 3,75 mol  <br><br> 3º Passo: Cálculo do número de mol de O2.  <br><br> Para determiná-lo, devemos dividir a massa de O2 por sua massa molar:  <br><br> nAr = mAr/MAr  <br><br> nAr = 32/40  <br><br> nAr = 0,8 mol  <br><br> 4º Passo: Cálculo do número de mol total.  <br><br> Para determiná-lo, devemos somar o número de mol dos gases encontrado nos passos anteriores:  <br><br> nT= nCH4 + nAr  <br><br> nT= 3,75 + 0,8  <br><br> nT= 4,55  <br><br> 5º Passo: Determinar a pressão total da mistura. <br><br> PT.VT = nT.R.T  <br><br> PT.44,8 = 4,55. 0,082.350  <br><br> PT.44,8 = 130585  <br><br> PT = 130585/44,8  <br><br> PT= 2,91 atm (aproximadamente)  <br><br> 6º Passo: Determinar a pressão parcial do ar.  <br><br> A pressão parcial do N2 é determinada pela seguinte expressão:  <br><br> PAr/PT = nAr/nT   <br><br> PAr/2,91  = 0,8/4,55  <br><br> 4,55. PAr = 2,91.0,8  <br><br> 4,55. PN2 = 2,328  <br><br> PN2 = 2,328/4,55  <br><br> PAr = 0,51 atm (aproximadamente)</p></div>");
+	}
+		var button = document.querySelector('.b1');
+		var button2 = document.querySelector('.b2');
+
+		button.onclick = function() {
+		button2.style.display = 'block';
+	}
+}
+</script>
+<body>
+	
+		
+
+		Questão 2: <br> <br>
+		 Uma mistura de 60 g de metano (CH4(g)) e 32,0 g de argônio (Ar(g)) foi recolhida em um balão de volume igual a 44,8 L e mantido a 350 K. Considerando as massas atômicas do H= 1; C= 12; Ar= 40 e R= 0,082 atm.L.K-1.mol-1, qual é o valor da pressão parcial do gás argônio nessa mistura?
+
+		<br><br>Resposta:<br>
+		<input type="radio" name="resposta" value="A"> 0,31 atm.<br>
+		<input type="radio" name="resposta" value="B"> 0,14 atm.<br>
+		<input type="radio" name="resposta" value="C"> 0,41 atm.<br>
+		<input type="radio" name="resposta" value="D" id="resposta1"> 0,51 atm.<br>
+		<input type="radio" name="resposta" value="E"> 0,15 atm.<br><br>
+		 <button id="botao" onclick="certo();">Enviar</button>
+
+</body>
+</html>

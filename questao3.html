@@ -1,0 +1,42 @@
+<DOCTYPE html>
+<html>
+<head><title>Ar atmosférico- questão03</title></head>
+<script >
+function certo() {
+	var a = document.querySelector("#resposta1").checked;
+	if(a)
+	{
+		document.write("CORRETO!	<br><br>  </div></div><div> <button class = 'b1'>Ver resolução</button><p class = 'b2' style = 'display: none;'>O texto no enunciado da questão mostrou que o desmatamento aumentou a concentração de CO2 na atmosfera (o responsável pelo efeito estufa). Assim, uma alternativa viável seria reduzir o desmatamento, o que aumentaria o potencial das plantas de absorver o CO2 da atmosfera. Trata-se da fotossíntese, que faz parte do ciclo do carbono.</p></div>");
+
+	}
+	else  {
+		document.write("Estude mais! <br><br> </div></div><div> <button class = 'b1'>Ver resolução</button><p class = 'b2' style = 'display: none;'>O texto no enunciado da questão mostrou que o desmatamento aumentou a concentração de CO2 na atmosfera (o responsável pelo efeito estufa). Assim, uma alternativa viável seria reduzir o desmatamento, o que aumentaria o potencial das plantas de absorver o CO2 da atmosfera. Trata-se da fotossíntese, que faz parte do ciclo do carbono.</p></div>");
+	}
+		var button = document.querySelector('.b1');
+		var button2 = document.querySelector('.b2');
+
+		button.onclick = function() {
+		button2.style.display = 'block';
+	}
+	
+}
+</script>
+<body>
+	
+		Questão 3: <br> <br>
+		“A atmosfera terrestre é composta pelos gases nitrogênio (N2) e oxigênio (O2), que somam cerca de 99%, e por gases traços, entre eles o gás carbônico (CO2), vapor de água (H2O), metano (CH4), ozônio (O3) e o óxido nitroso (N2O), que compõem o restante 1% do ar que respiramos. Os gases traços, por serem constituídos por pelo menos três átomos, conseguem absorver o calor irradiado pela Terra, aquecendo o planeta. Esse fenômeno, que acontece há bilhões de anos, é chamado de efeito estufa. A partir da Revolução Industrial (século XIX), a concentração de gases traços na atmosfera, em particular o CO2, tem aumentado significativamente, o que resultou no aumento da temperatura em escala global. Mais recentemente, outro fator tornou-se diretamente envolvido no aumento da concentração de CO2 na atmosfera: o desmatamento."
+		Considerando o texto, uma alternativa viável para combater o efeito estufa é :
+
+
+
+		<br><br>Resposta:<br>
+		<input type="radio" name="resposta" value="A"> Reduzir o calor irradiado pela Terra mediante a substituição da produção primária pela industrialização refrigerada. <br>
+		<input type="radio" name="resposta" value="B"> Promover a queima da biomassa vegetal, responsável pelo aumento do efeito estufa devido à produção de CH4. <br>
+		<input type="radio" name="resposta" value="C" id="resposta1"> Reduzir o desmatamento, mantendo-se, assim, o potencial da vegetação em absorver o CO2 da atmosfera.<br>
+		<input type="radio" name="resposta" value="D"> Aumentar a concentração atmosférica de H2O, molécula capaz de absorver grande quantidade de calor.<br>
+		<input type="radio" name="resposta" value="E"> Remover moléculas orgânicas polares da atmosfera, diminuindo a capacidade delas de reter calor.”		
+<br><br>
+<button id="botao" onclick="certo()">Enviar</button>
+
+</body>
+</html>

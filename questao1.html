@@ -1,0 +1,41 @@
+<DOCTYPE html>
+<html>
+<head><title>Ar atmosférico- questão01</title></head>
+<script>
+	
+	function certo() {
+
+	var a = document.querySelector("#resposta1").checked;
+		if(a)
+		{
+			document.write("CORRETO!!</div></div><div> <button class = 'b1'>Ver resolução</button><p class = 'b2' style = 'display: none;'>  Para resolver esta questa, utiliza-se a Lei de Charles que corresponde à Equação Fundamental dos Gases adaptada para Transformações Isobáricas, isto é, que não apresentam alteração na Pressão.	<br><br>	V0/T0= V/T <br><br> V/300= 1,2V/T -> T= 300*1,2= 360K  <br><br> Note que como o volume aumentou 20%, o volume final será então o volume inicial multiplicado por 1,2 (100% + 20%), dessa forma V se anula dos dois lados e pela multiplicação cruzada (produto dos meios é igual ao produto dos extremos) tem-se a resposta. Todavia, ele deseja o resultado em ºC e não em K, para tanto, basta converter:  <br><br> 360-273= 87°C<br><br></p></div>");
+
+		}
+		else  {
+			document.write("Estude mais! <br><br> </div></div><div> <button class = 'b1'>Ver resolução</button><p class = 'b2' style = 'display: none;'>  Para resolver esta questa, utiliza-se a Lei de Charles que corresponde à Equação Fundamental dos Gases adaptada para Transformações Isobáricas, isto é, que não apresentam alteração na Pressão.	<br><br>	V0/T0= V/T <br><br> V/300= 1,2V/T -> T= 300*1,2= 360K  <br><br> Note que como o volume aumentou 20%, o volume final será então o volume inicial multiplicado por 1,2 (100% + 20%), dessa forma V se anula dos dois lados e pela multiplicação cruzada (produto dos meios é igual ao produto dos extremos) tem-se a resposta. Todavia, ele deseja o resultado em ºC e não em K, para tanto, basta converter:  <br><br> 360-273= 87°C<br><br></p></div>");
+		}
+		var button = document.querySelector('.b1');
+		var button2 = document.querySelector('.b2');
+
+		button.onclick = function() {
+		button2.style.display = 'block';
+	}
+	}
+</script>
+<body>
+		Questão 1: <br> <br>
+		Um gás ideal exerce pressão de 2 atm a 27°C. O gás sofre uma transformação isobárica na qual seu volume sofre um aumento de 20%. Supondo não haver alteração na massa do gás, sua temperatura passou a ser, em °C:
+		<br><br>Resposta:<br>
+		<input type="radio" value="32"> 32<br>
+		<input type="radio" value="100"> 100<br>
+		<input type="radio" value="54"> 54<br>
+		<input type="radio" value="120 "> 120<br>
+
+		<input type="radio" value="87" id="resposta1"> 87
+
+		<br>
+		 <button id="botao" onclick="certo()">Enviar</button>
+<br><br>
+
+</body>
+</html>
