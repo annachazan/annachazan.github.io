@@ -1,0 +1,65 @@
+.secao
+{
+    padding: 2%;
+    height: 900px;
+    background-color: white;
+    border: solid 15px #BFBF3F;
+}
+
+
+.secao p 
+{
+    font-size: 110%;
+    color: black;
+   
+    text-align: justify;
+}
+
+.desc
+{
+    float: left;
+    text-align: justify;
+}
+
+.genero
+{
+    text-align: justify;
+    float: right;
+    width: 55%;
+}
+
+.tit
+{
+    float: left;
+    width: 60%;
+}
+
+.titulo
+{
+    float: left;
+    width: 80%;
+}
+
+.opniao
+{
+    width: 100%;
+    float: left;
+}
+
+.opniao p 
+{
+    
+    color: black;
+}
+
+.elenco
+{
+    float: right;
+    width: 55%;
+}
+
+.image
+{
+    width: 40%;
+    float: left;
+}
