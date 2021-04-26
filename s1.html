@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf8">
+
+<meta name="author" content="Anna Chazan e Rebeca Azevedo">
+       <link href='https://fonts.googleapis.com/css?family=Allura' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140118868-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-140118868-1');
+    </script>
+  
+</head>
+<body>
+<h1> Classificaçõ de soluções </h1>
+<p>Monte sua solução! Primeiramente, escolha uma quantidade de KNO3 (soluto), depois, outra de H2O (solvente) e veja a classificação dela.</p> 
+<h4> OBS:A simulação será realizada considerando a solução em 100°C.</h4>
+<input id = "KNO3" placeholder= " Gramas de KNO3">
+<input id = "H2O" placeholder= "Gramas de H2O">
+<button onclick="R();">Executar</button>
+<p id="resultado"></p>
+
+
+<script >
+   function R(){
+     var sl = document.getElementById("KNO3").value;
+      sl= parseFloat(sl.replace(',','.'));
+      
+      var sv = document.getElementById("H2O").value;
+      sv=parseFloat(sv.replace(',','.'));
+
+      if((sl*100)/250 == sv){
+         var l = " Sua solução é considerada como SATURADA, uma vez que todo o soluto é dissolvido pelo solvente, atingindo a capacidade máxima dele. <br><br> Calculo: <br> 250g KNO3 ----- 100g H2O <br> Xg KNO3------"+sv+"g H2O <br><br> 100 * X  ---- 250 * "+sv + "<br> 100X = "+ (250*sv)+"<br> <br> X = "+((250*sv)/100) + "<br> <br> A partir disso, podemos concluir que a quantidade de soluto que dissolve na quantia de solvente fornecida é a mesma que você escolheu. ";
+      }
+
+      else if ((sl*100)/250 > sv)
+      {
+        var l = " Sua solução é considerada como SUPERSATURADA, uma vez que ela tem mais soluto do que a capacidade do solvente <br><br>Calculo: <br> 250g KNO3 ----- 100g H2O <br> Xg KNO3------"+sv+"g H2O <br><br> 100 * X  ---- 250 * "+sv + "<br> 100X = "+ (250*sv)+"<br> <br> X = "+((250*sv)/100) + "<br> <br> A partir disso, podemos concluir que a quantidade de soluto que dissolve na quantia de solvente fornecida é inferior a que você escolheu.";
+      }
+
+      else{
+        var l = " Sua solução é considerada como INSATURADA, uma vez que ela tem menos soluto do que a capacidade do solvente.<br><br> Calculo: <br> 250g KNO3 ----- 100g H2O <br> Xg KNO3------"+sv+"g H2O <br><br> 100 * X  ---- 250 * "+sv + "<br> 100X = "+ (250*sv)+"<br> <br> X = "+((250*sv)/100) + "<br> <br> A partir disso, podemos concluir que a quantidade de soluto que dissolve na quantia de solvente fornecida é superior a que você escolheu.";
+
+      }
+
+     
+      document.getElementById("resultado").innerHTML = l;
+   }
+</script>
+
+<h3> Voltar 
+    <a href="./solucoes.html"><i class="material-icons" style="color:#5E610B;">chevron_right</i> </a> </h3>
+
+</body>
+</html>

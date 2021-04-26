@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf8">
+<title>Molaridade</title>
+<meta name="author" content="Anna Chazan e Rebeca Azevedo">
+    <link href='https://fonts.googleapis.com/css?family=Allura' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140118868-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-140118868-1');
+    </script>
+  
+</head>
+<body>
+<h1> Molaridade </h1>  
+<p> Descubra a concentração molar de sua solução!</p> 
+<p> Coloque a quantidade em MOL's de KNO3 (soluto) desejada e depois defina em meio a quantos LITROS de H20 (solvente) ele será dissolvido:</p>
+<input id = "KNO3" placeholder= " Mols de KNO3">
+<input id = "H2O" placeholder= "Litros de H2O">
+<button onclick="R();">Executar</button>
+<p id="resultado"></p>
+
+
+<script >
+   function R(){
+     var sl = document.getElementById("KNO3").value;
+      sl= parseFloat(sl.replace(',','.'));
+      
+      var sv = document.getElementById("H2O").value;
+      sv=parseFloat(sv.replace(',','.'));
+
+      var M = "A concentração em quantidade de matéria se dá pela fórmula: <br> M = n1/V na qual n1 equivale ao número de mol's e V ao volume em litros da solução. <br> Então, aplicando esta fórmula teremos que <br> M = "+ sl + " / " + sv + "<br> Logo, concluiremos que a concentração desta solução é de <br> M = " + sl/sv + " mol/L";
+
+     
+      document.getElementById("resultado").innerHTML = M;
+   }
+</script>
+
+<h3> Voltar 
+    <a href="./solucoes.html"><i class="material-icons" style="color:#5E610B;">chevron_right</i> </a> </h3>
+
+</body>
+</html>
