@@ -1,12 +1,18 @@
 $(function(){
 
+    // receber os valores dos lados
+    
     $("#botao").click(function(){
-        let lado1 = $("#valor1").val();
-        let lado2 = $("#valor2").val();
-        let lado3 = $("#valor3").val();
+        let l1 = $("#valor1").val();
+        let l2 = $("#valor2").val();
+        let l3 = $("#valor3").val();
+        
+        
+        // verificar se os números são válidos 
+        
         if(lado1<=0 || lado2<=0 || lado3<=0)
         {
-            $("#resultado").text("Valores incompativeis.");
+            $("#resultado").text("Por favor, insira valores compativeis.");
         }
         else
         {
@@ -16,35 +22,28 @@ $(function(){
     })
 
    
-
+// essa função verá se realmente é possível formar um triângulo com os valores fornecidos
     function tr (l1, l2, l3)
     {
         l1 = parseFloat(l1);
         l2 = parseFloat(l2);
         l3 = parseFloat(l3);
-        if(cond_existencia_triangulo(l1, l2, l3) == true)
+        if(existe(l1, l2, l3) == true)
         {
-            return classificação_triangulo(l1, l2, l3);
+            return ct(l1, l2, l3);
         }
         else
         {
-            return "Triângulo não existe.";
+            return "Infelizmente não é possível formar um triângulo com essas mediads de lado.";
         }
     }
-
-    function modulo (valor)
+    
+    
+      function existe (l1, l2, l3)
     {
-        if(valor < 0)
-        {
-            valor = valor * (-1);
-        }
-        return valor;
-    }
-
-    function cond_existencia_triangulo (l1, l2, l3)
-    {
-        if(modulo(l2-l3) < l1 && l1 < (l2+l3) || modulo(l1-l3) < l2 && l2
-            < (l1+l3) || modulo(l1-l2) < l3 && l3 < (l1+l2))
+        if(Math.abs(l2-l3) < l1 && l1 < (l2+l3)
+           || Math.abs(l1-l3) < l2 && l2 < (l1+l3)
+           || Math.abs(l1-l2) < l3 && l3 < (l1+l2))
         {
             return true;
         }
@@ -53,21 +52,22 @@ $(function(){
             return false;
         }
     }
-
-    function classificação_triangulo (l1, l2, l3)
+    
+    
+   
+    function ct (l1, l2, l3)
     {
         if(l1 == l2 && l1 == l3 && l2 == l3)
         {
-            return "Triângulo é equilátero.";
+            return "equilátero.";
         }
-        if(l1 == l2 && l1!= l3 || l2 == l3 && l2 != l
-            1 || l3 == l1 && l3 != l2)
+        if(l1 == l2 && l1!= l3 || l2 == l3 && l2 != l1 || l3 == l1 && l3 != l2)
         {
-            return "Triângulo é Isóceles.";
+            return "isóceles.";
         }
         if(l1 != l2 && l1 != l3 && l3 != l2)
         {
-            return "Triângulo é Escaleno.";
+            return "escaleno.";
         }
 
     }
